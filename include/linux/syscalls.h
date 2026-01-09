@@ -74,6 +74,7 @@ struct landlock_ruleset_attr;
 enum landlock_rule_type;
 struct cachestat_range;
 struct cachestat;
+struct osi_cpuinfo;
 
 #include <linux/types.h>
 #include <linux/aio_abi.h>
@@ -372,6 +373,7 @@ asmlinkage long sys_epoll_pwait2(int epfd, struct epoll_event __user *events,
 asmlinkage long sys_dup(unsigned int fildes);
 asmlinkage long sys_dup3(unsigned int oldfd, unsigned int newfd, int flags);
 asmlinkage long sys_fcntl(unsigned int fd, unsigned int cmd, unsigned long arg);
+asmlinkage long sys_osi_hello(struct osi_cpuinfo __user *uinfo, size_t usize);
 #if BITS_PER_LONG == 32
 asmlinkage long sys_fcntl64(unsigned int fd,
 				unsigned int cmd, unsigned long arg);
